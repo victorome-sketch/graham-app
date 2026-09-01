@@ -230,3 +230,9 @@ Source files are declared explicitly via an `@source` directive in `application.
 
   Then have `agent-browser` (or any browser tool) navigate to `http://localhost:4000`, **not** `http://localhost:3000`. `bin/dev` honors `PORT` and vite-plugin-ruby honors `VITE_RUBY_PORT` (keeping Rails and Vite in agreement), so no file edits are needed. If you're verifying multiple worktrees at once, give each its own distinct pair (`4000`/`4036`, `4100`/`4136`, …) so they don't collide with each other either. Tear down the verification server when finished.
 - **For new pages, new layouts, or significant UI changes, take a screenshot and evaluate your own work** — confirm styling, design, visual balance, and responsiveness (desktop + mobile widths) are executed correctly. Store these verification screenshots in `tmp/screenshots/` so they're easy to find and don't pollute the repo.
+
+## `_build_plan/`
+
+The `_build_plan/` folder contains the initial PRD and per-milestone prompts used to scaffold this codebase during its initial build-out phase. These files are **temporary** — they exist for documentation and guidance only. They are **not** functional: no code, configuration, or runtime logic in this codebase should import, reference, or depend on anything inside `_build_plan/`.
+
+Do not treat `_build_plan/` as long-living documentation for the codebase. The codebase will evolve past the assumptions and decisions captured here. Once the initial milestones are complete, this folder is expected to be deleted.
