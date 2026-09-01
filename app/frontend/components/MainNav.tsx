@@ -3,7 +3,7 @@ import { Link, router, usePage } from "@inertiajs/react"
 import {
   ChevronsLeft,
   ChevronsRight,
-  Home,
+  ListChecks,
   LogOut,
   Menu,
   Settings,
@@ -35,10 +35,10 @@ export type NavItemDef = {
 
 const DEFAULT_NAV_ITEMS: NavItemDef[] = [
   {
-    href: "/dashboard",
-    icon: Home,
-    label: "Home",
-    match: (url) => url === "/" || url.startsWith("/dashboard"),
+    href: "/analyses/new",
+    icon: ListChecks,
+    label: "New analysis",
+    match: (url) => url === "/" || url.startsWith("/analyses"),
   },
 ]
 
@@ -58,7 +58,7 @@ function useMainNavOpen() {
 
 export function MainNav({
   items = DEFAULT_NAV_ITEMS,
-  brandHref = "/dashboard",
+  brandHref = "/analyses/new",
 }: {
   items?: NavItemDef[]
   brandHref?: string

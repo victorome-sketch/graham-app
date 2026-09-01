@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   allow_unauthenticated_access only: :home
 
   def home
-    return redirect_to(dashboard_path) if authenticated?
+    return redirect_to(new_analysis_path) if authenticated?
     render inertia: "Home"
   end
 end

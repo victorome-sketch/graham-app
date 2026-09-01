@@ -202,6 +202,7 @@
   .badge-signal  { @apply bg-signal-faded text-signal-display; }
   .badge-muted   { @apply bg-transparent text-ink-muted border border-hairline; }
   .badge-solid   { @apply bg-accent text-page; }
+  .badge-danger  { @apply bg-danger-faded text-danger-display; }
 
   /* Toggle buttons (pill-shaped on/off) */
   .toggle-button {

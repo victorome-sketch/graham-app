@@ -11,7 +11,7 @@ Disallow: /login
 Disallow: /signup
 Disallow: /logout
 Disallow: /passwords
-Disallow: /dashboard
+Disallow: /analyses
 Disallow: /settings
 Disallow: /profile
 Disallow: /letter_opener
