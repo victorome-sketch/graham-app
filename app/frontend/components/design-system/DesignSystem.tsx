@@ -17,6 +17,8 @@ import { IconographySection } from "@/components/design-system/sections/elements
 import { ButtonsSection } from "@/components/design-system/sections/elements/ButtonsSection";
 import { ButtonDropdownSection } from "@/components/design-system/sections/elements/ButtonDropdownSection";
 import { FormsSection } from "@/components/design-system/sections/elements/FormsSection";
+import { FieldAffixSection } from "@/components/design-system/sections/elements/FieldAffixSection";
+import { FormSectionsSection } from "@/components/design-system/sections/elements/FormSectionsSection";
 import { BadgesSection } from "@/components/design-system/sections/elements/BadgesSection";
 import { ToggleButtonsSection } from "@/components/design-system/sections/elements/ToggleButtonsSection";
 import { ListingsSection } from "@/components/design-system/sections/elements/ListingsSection";
@@ -116,6 +118,8 @@ export function DesignSystem() {
           <ButtonsSection />
           <ButtonDropdownSection />
           <FormsSection />
+          <FieldAffixSection />
+          <FormSectionsSection />
           <BadgesSection />
           <ToggleButtonsSection />
           <ListingsSection />

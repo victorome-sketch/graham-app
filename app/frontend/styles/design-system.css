@@ -212,6 +212,87 @@
   .form-control-select { @apply appearance-none pr-9; }
   .form-control-textarea { @apply h-auto min-h-[6rem] py-2 leading-normal; }
 
+  /* --- 1. Invalid state -------------------------------------------------- */
+  /* `aria-invalid` is already set by every form page; give it a visual. */
+  .form-control[aria-invalid="true"] {
+    border-color: var(--color-danger);
+  }
+
+  /* --- 2. Field with a unit affix ---------------------------------------- */
+  /* Puts the unit ($, $M, years) inside the control's frame so labels stay
+     short and the values keep one alignment down a column. Usage:
+
+       <div className="field-affix">
+         <span aria-hidden="true" className="field-affix-start">$</span>
+         <Input id="price" … />
+       </div>
+
+     The affix is decorative — carry the unit in the label with a `sr-only`
+     suffix so it reaches the accessible name. Use .field-affix-end for a
+     trailing unit. */
+  .field-affix {
+    @apply flex h-10 w-full overflow-hidden rounded-md border border-hairline bg-page;
+    @apply focus-within:border-accent focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:ring-offset-page;
+  }
+
+  .field-affix-start,
+  .field-affix-end {
+    @apply flex shrink-0 select-none items-center bg-surface px-2.5 text-xs text-ink-muted;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  .field-affix-start { @apply border-r border-hairline; }
+  .field-affix-end   { @apply border-l border-hairline; }
+
+  /* The inner control loses its own frame and ring — the wrapper owns both. */
+  .field-affix .form-control {
+    @apply h-full rounded-none border-0 bg-transparent text-right;
+    @apply focus-visible:border-0 focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .field-affix:has(input[aria-invalid="true"]) { border-color: var(--color-danger); }
+
+  /* Disabled: ONE dim, on the wrapper. `.form-control:disabled` already sets
+     opacity-50, and letting that stack under a dimmed wrapper lands the value
+     around 25% — unreadable. Inside an affix the control keeps full opacity
+     and the whole group reads as disabled through a filled surface and muted
+     text instead. The label and helper text outside the wrapper are untouched
+     and stay at full contrast. */
+  .field-affix:has(input:disabled) {
+    background-color: var(--color-surface);
+    cursor: not-allowed;
+  }
+  .field-affix:has(input:disabled) .field-affix-start,
+  .field-affix:has(input:disabled) .field-affix-end {
+    background-color: transparent;
+  }
+  .field-affix .form-control:disabled {
+    opacity: 1;
+    color: var(--color-ink-muted);
+  }
+
+  /* --- 3. Numbered form section header ----------------------------------- */
+  /* A mono index, a display-face title, and a hairline rule that runs to the
+     edge of the column, so a long form reads as a few labelled stops instead
+     of one uninterrupted stack. Goes inside <legend>:
+
+       <legend className="mb-4 w-full">
+         <span className="form-section-head">
+           <span className="form-section-index">01</span>
+           <span className="form-section-title">Company</span>
+           <span aria-hidden="true" className="form-section-rule" />
+         </span>
+       </legend>
+
+     Put the fieldset's own `min-w-0` on the <fieldset> — a fieldset's default
+     `min-inline-size: min-content` otherwise stops it shrinking in a grid. */
+  .form-section-head  { @apply flex w-full flex-wrap items-baseline gap-x-3 gap-y-1; }
+  .form-section-index { @apply text-xs tracking-wider text-ink-muted; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .form-section-title { @apply font-display text-base font-semibold text-ink-display; letter-spacing: -0.01em; }
+  .form-section-rule  { @apply h-px min-w-6 flex-1 bg-hairline; }
+  .form-section-note  { @apply text-xs text-ink-muted; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
   /* Badges */
   .badge {
     @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-xs font-medium leading-none;

@@ -6,10 +6,10 @@ class AnalysisFlowTest < ApplicationSystemTestCase
   # Worked example A: every rule passes, price below the Graham Number.
   EXAMPLE_A = {
     "Ticker" => "STL",
-    "Share price ($)" => "24",
-    "Annual revenue ($ millions)" => "900",
-    "Current assets ($ millions)" => "500",
-    "Current liabilities ($ millions)" => "200",
+    "Share price" => "24",
+    "Annual revenue" => "900",
+    "Current assets" => "500",
+    "Current liabilities" => "200",
     "Latest year" => "2.00",
     "1 year ago" => "2.10",
     "2 years ago" => "1.90",
@@ -20,18 +20,18 @@ class AnalysisFlowTest < ApplicationSystemTestCase
     "7 years ago" => "1.30",
     "8 years ago" => "1.25",
     "9 years ago" => "1.20",
-    "Consecutive years of dividends paid" => "25",
-    "Book value per share ($)" => "20"
+    "Consecutive years of dividends" => "25",
+    "Book value per share" => "20"
   }.freeze
 
   # Worked example C (see test/models/graham/checklist_test.rb): one pass, six
   # fails, price three times the Graham Number.
   EXAMPLE_C = {
     "Ticker" => "JUNK",
-    "Share price ($)" => "45",
-    "Annual revenue ($ millions)" => "300",
-    "Current assets ($ millions)" => "150",
-    "Current liabilities ($ millions)" => "100",
+    "Share price" => "45",
+    "Annual revenue" => "300",
+    "Current assets" => "150",
+    "Current liabilities" => "100",
     "Latest year" => "1.00",
     "1 year ago" => "-0.40",
     "2 years ago" => "0.60",
@@ -42,8 +42,8 @@ class AnalysisFlowTest < ApplicationSystemTestCase
     "7 years ago" => "0.30",
     "8 years ago" => "0.20",
     "9 years ago" => "0.10",
-    "Consecutive years of dividends paid" => "5",
-    "Book value per share ($)" => "10"
+    "Consecutive years of dividends" => "5",
+    "Book value per share" => "10"
   }.freeze
 
   LONG_NAME = "The Very Long Industrial Conglomerate Holdings Corporation of North America".freeze
@@ -108,7 +108,7 @@ class AnalysisFlowTest < ApplicationSystemTestCase
     assert_field "7 years ago", with: "1.30"
 
     check "This is a financial company (bank or insurer)"
-    assert_field "Current assets ($ millions)", disabled: true
+    assert_field "Current assets", disabled: true
     click_on "Run checklist"
 
     within(VERDICT_PANEL) do
@@ -170,7 +170,7 @@ class AnalysisFlowTest < ApplicationSystemTestCase
     fill_example_a
     fill_in "Company name", with: LONG_NAME
     fill_in "Latest year", with: "-6.00"
-    fill_in "Book value per share ($)", with: "10"
+    fill_in "Book value per share", with: "10"
     # Mount the results page at phone width: the recap must start collapsed there.
     resize_to(375, 2600)
     click_on "Run checklist"
@@ -232,7 +232,7 @@ class AnalysisFlowTest < ApplicationSystemTestCase
 
     # A negative book value takes rule 7 down the bvps_not_positive branch.
     click_on "Edit inputs & re-run"
-    fill_in "Book value per share ($)", with: "-5"
+    fill_in "Book value per share", with: "-5"
     click_on "Run checklist"
 
     within("li[data-rule='moderate_pb']") do
