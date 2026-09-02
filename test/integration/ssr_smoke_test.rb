@@ -65,6 +65,29 @@ class SsrSmokeTest < ActiveSupport::TestCase
     assert_includes body, "$30.00", "Expected the Graham Number figure in the SSR body"
     assert_includes body, "Inputs used"
     assert_includes body, "Latest year", "Expected the inputs recap in the SSR body"
+
+    # The input side of the flow. Guards the same class of mistake as the
+    # Results assertion — browser globals reached at render time — plus the
+    # completion count, which is computed during render. React separates
+    # adjacent text nodes with `<!-- -->` in server output ("of <!-- -->17"),
+    # so both bodies are normalised before the text assertions.
+    empty = render_page("analyses/New", prefill: {}, revenue_threshold: 700.0)["body"].gsub("<!-- -->", "")
+    assert_includes empty, "Every field is required unless marked optional"
+    assert_includes empty, "Input progress"
+    assert_includes empty, "of 17"
+    assert_includes empty, "Earnings per share"
+    refute_includes empty, "Ready to run"
+
+    # Prefilled, as "Edit inputs & re-run" renders it: every value present, so
+    # the card claims readiness — and a financial company owes only 15.
+    prefilled = render_page(
+      "analyses/New",
+      prefill: RESULTS_INPUTS.merge(financial_company: true).except(:current_assets, :current_liabilities),
+      revenue_threshold: 700.0
+    )["body"].gsub("<!-- -->", "")
+    assert_includes prefilled, "Ready to run"
+    assert_includes prefilled, "of 15"
+    assert_includes prefilled, "STL"
   end
 
   RESULTS_INPUTS = {

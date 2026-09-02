@@ -31,6 +31,8 @@ const NAV: NavGroup[] = [
       { id: "buttons", label: "Buttons" },
       { id: "button-dropdown", label: "Button dropdown" },
       { id: "forms", label: "Forms" },
+      { id: "field-affix", label: "Field affix" },
+      { id: "form-sections", label: "Form sections" },
       { id: "badges", label: "Badges" },
       { id: "toggle-buttons", label: "Toggle buttons" },
       { id: "listings", label: "Listings" },
