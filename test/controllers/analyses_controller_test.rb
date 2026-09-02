@@ -68,6 +68,25 @@ class AnalysesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_analysis_path
   end
 
+  test "POST create echoes the raw inputs and seven rules in the Inertia payload" do
+    log_in_as(@user)
+    post analyses_path, params: VALID_PARAMS,
+         headers: { "X-Inertia" => "true", "X-Inertia-Version" => ViteRuby.digest }
+    assert_response :success
+
+    page = JSON.parse(response.body)
+    assert_equal "analyses/Results", page.fetch("component")
+
+    props = page.fetch("props")
+    # The results page's inputs recap shows these strings exactly as typed.
+    assert_equal "STL", props.dig("inputs", "ticker")
+    assert_equal "2.00", props.dig("inputs", "eps_1")
+    assert_equal "1.20", props.dig("inputs", "eps_10")
+    assert_equal "20", props.dig("inputs", "bvps")
+    assert_equal 7, props.dig("analysis", "rules").size
+    assert_equal 7, props.dig("analysis", "met_count")
+  end
+
   private
     def log_in_as(user)
       post login_path, params: { email: user.email, password: @password }

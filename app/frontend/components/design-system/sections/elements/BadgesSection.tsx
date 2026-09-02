@@ -5,6 +5,7 @@ const code = `import { Badge } from "@/components/ui/badge";
 
 <Badge tone="neutral">Draft</Badge>
 <Badge tone="accent">New</Badge>
+<Badge tone="affirm">Pass</Badge>
 <Badge tone="signal">Warning</Badge>
 <Badge tone="muted">Archived</Badge>
 <Badge tone="solid">Pro</Badge>
@@ -17,7 +18,7 @@ export function BadgesSection() {
       title="Badges"
       description={
         <>
-          Small inline tag/badge for status or category. Six tones cover most
+          Small inline tag/badge for status or category. Seven tones cover most
           needs. Always use the primitive — never reach for ad-hoc pill
           markup.
         </>
@@ -39,6 +40,7 @@ export function BadgesSection() {
         <div className="flex flex-wrap items-center gap-3">
           <Badge tone="neutral">Draft</Badge>
           <Badge tone="accent">New</Badge>
+          <Badge tone="affirm">Pass</Badge>
           <Badge tone="signal">Warning</Badge>
           <Badge tone="muted">Archived</Badge>
           <Badge tone="solid">Pro</Badge>
@@ -48,8 +50,9 @@ export function BadgesSection() {
       code={code}
       options={
         <ul className="list-disc pl-5">
-          <li><code>tone</code>: <code>neutral</code> (default) | <code>accent</code> | <code>signal</code> | <code>muted</code> | <code>solid</code> | <code>danger</code></li>
+          <li><code>tone</code>: <code>neutral</code> (default) | <code>accent</code> | <code>affirm</code> | <code>signal</code> | <code>muted</code> | <code>solid</code> | <code>danger</code></li>
           <li>Pair with a small lucide icon as the first child for richer status badges.</li>
+          <li><code>affirm</code> is for confirmed / pass states (verdicts, checks); <code>accent</code> stays brand-only.</li>
         </ul>
       }
     />

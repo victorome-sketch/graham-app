@@ -67,6 +67,24 @@ export const SPLASH: PaletteEntry[] = [
     hexDark: "oklch(86% 0.135 211.53)",
   },
   {
+    name: "affirm",
+    utility: "bg-affirm / text-affirm",
+    hexLight: "oklch(58% 0.11 155)",
+    hexDark: "oklch(72% 0.13 155)",
+  },
+  {
+    name: "affirm-faded",
+    utility: "bg-affirm-faded",
+    hexLight: "oklch(96% 0.02 155)",
+    hexDark: "oklch(22% 0.045 155)",
+  },
+  {
+    name: "affirm-display",
+    utility: "bg-affirm-display / text-affirm-display",
+    hexLight: "oklch(48% 0.10 155)",
+    hexDark: "oklch(80% 0.12 155)",
+  },
+  {
     name: "signal",
     utility: "bg-signal / text-signal",
     hexLight: "#fcd34d",
@@ -105,6 +123,6 @@ export const SPLASH: PaletteEntry[] = [
 ];
 
 export const FONTS = {
-  display: "Stack Sans Text",
+  display: "Inter",
   body: "DM Sans",
 };

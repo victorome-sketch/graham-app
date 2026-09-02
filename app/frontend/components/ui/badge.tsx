@@ -8,6 +8,7 @@ const badgeVariants = cva("badge", {
     tone: {
       neutral: "badge-neutral",
       accent: "badge-accent",
+      affirm: "badge-affirm",
       signal: "badge-signal",
       muted: "badge-muted",
       solid: "badge-solid",

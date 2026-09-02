@@ -17,7 +17,7 @@ export function ColorsSection() {
       title="Colors"
       description={
         <>
-          Ten semantic tokens, each defined for light and dark mode. Use the
+          Thirteen semantic tokens, each defined for light and dark mode. Use the
           token names — never raw hex. Each swatch shows the value for the
           mode you're currently viewing; both hex codes are listed below the
           swatch and click-to-copy.
@@ -33,6 +33,11 @@ export function ColorsSection() {
           <li>
             Use <code>ink-display</code> for headlines and emphasized
             content.
+          </li>
+          <li>
+            Use <code>affirm</code> for confirmed / pass fills and marks and{" "}
+            <code>affirm-display</code> for affirm text. <code>accent</code> is
+            brand and interaction only — never a pass state.
           </li>
         </ul>
       }
