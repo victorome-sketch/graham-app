@@ -57,6 +57,9 @@
         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-medium text-zinc-700 dark:text-zinc-300">Tailwind v4</span>
         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-medium text-zinc-700 dark:text-zinc-300">Build New starter</span>
       </div>
+      <div class="mt-6 rounded-lg border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm text-emerald-900 dark:text-emerald-200">
+        <p><strong class="font-semibold">Where the app stands (reconciled with the code on 2026-09-08):</strong> Milestone 1 has shipped, and both of its screens — the New analysis form and the Results page — have since been rebuilt to the design handoff (Phases 1–2). Milestones 2 and 3 are not started. Everything below describes the app as it is for Milestone 1 and as planned for Milestones 2–3.</p>
+      </div>
     </section>
 
     <!-- WHAT THE APP DOES -->
@@ -71,7 +74,7 @@
               <i data-lucide="search" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Ticker lookup</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Ticker lookup <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Planned · M2</span></p>
               <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Enter one US ticker; the app fetches fundamentals and pre-fills the analysis form.</p>
             </div>
           </div>
@@ -82,8 +85,8 @@
               <i data-lucide="pencil" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Editable form with provenance</p>
-              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Every input is hand-editable and tagged <code class="font-mono text-xs">api</code> or <code class="font-mono text-xs">manual</code>; missing API data never blocks an analysis.</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Editable form with provenance <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">Form shipped · M1</span> <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Tags · M2</span></p>
+              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Every input is hand-editable. The form is manual-only today; <code class="font-mono text-xs">api</code> / <code class="font-mono text-xs">manual</code> provenance tags arrive with the ticker lookup, and missing API data never blocks an analysis.</p>
             </div>
           </div>
         </li>
@@ -93,7 +96,7 @@
               <i data-lucide="zap" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Graham rules engine</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Graham rules engine <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">Shipped · M1</span></p>
               <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Seven pass/fail/N-A verdicts against the defensive-investor criteria, each shown with the actual numbers behind it.</p>
             </div>
           </div>
@@ -104,8 +107,8 @@
               <i data-lucide="dollar-sign" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Graham Number &amp; margin</p>
-              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Graham's fair-value ceiling shown next to the current price with a margin % — displayed as information, never a signal.</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Graham Number &amp; margin <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">Shipped · M1</span></p>
+              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Graham's fair-value ceiling shown next to the current price with a margin %, colored by sign (green below the ceiling, red above) and captioned “information only, never a signal.”</p>
             </div>
           </div>
         </li>
@@ -115,7 +118,7 @@
               <i data-lucide="archive" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Saved history</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Saved history <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Planned · M3</span></p>
               <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Every analysis is saved as a frozen snapshot; browse past runs and re-run any ticker with fresh data.</p>
             </div>
           </div>
@@ -126,8 +129,8 @@
               <i data-lucide="circle-dot" class="w-4 h-4 text-zinc-700 dark:text-zinc-300"></i>
             </div>
             <div>
-              <p class="font-medium text-zinc-900 dark:text-zinc-100">Configurable threshold</p>
-              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">The revenue threshold for criterion 1 is a setting (default ≈ $700M), not a constant.</p>
+              <p class="font-medium text-zinc-900 dark:text-zinc-100 flex flex-wrap items-center gap-2">Configurable threshold <span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">Shipped · M1</span></p>
+              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">The revenue threshold for criterion 1 is a setting on the Settings page (default $700M, entered in $ millions), not a constant.</p>
             </div>
           </div>
         </li>
@@ -153,47 +156,52 @@
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">1</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Adequate size</td>
-              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Revenue ≥ threshold (Graham's $100M in 1973 ≈ $700M today; configurable setting)</td>
-              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Latest revenue</td>
+              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Revenue ≥ threshold (Graham's $100M in 1973 ≈ $700M today; configurable setting). Both entered in $ millions</td>
+              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Latest annual revenue ($M)</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">2</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Strong financial condition</td>
               <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Current ratio ≥ 2. <span class="font-medium text-zinc-900 dark:text-zinc-100">N/A for financial companies</span> (banks, insurers) — never failed for them</td>
-              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Current assets &amp; liabilities</td>
+              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Current assets &amp; liabilities ($M) — skipped (fields disabled) when the financial-company flag is on</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">3</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Earnings stability</td>
               <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Positive EPS every year, last 10 years</td>
-              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">10y EPS history</td>
+              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Diluted EPS for each of the last 10 fiscal years, newest first (negatives allowed)</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">4</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Dividend record</td>
-              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Dividend paid every year, last 20 years</td>
-              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">20y dividend history</td>
+              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Dividends paid for ≥ 20 consecutive years</td>
+              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">One number: consecutive years of dividends paid (0–99)</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">5</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Earnings growth</td>
-              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">EPS growth ≥ 33% over 10 years, using 3-year averages at each end</td>
-              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">10y EPS history</td>
+              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">EPS growth ≥ 33% over 10 years, using 3-year averages at each end. <span class="font-medium text-zinc-900 dark:text-zinc-100">N/A</span> (not failed) when the years 8–10 average is ≤ 0 — growth from a non-positive base is undefined</td>
+              <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Years 1–3 vs. years 8–10 of the same EPS history</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">6</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Moderate P/E</td>
-              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Price ≤ 15 × average EPS of last 3 years</td>
+              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">Price ≤ 15 × average EPS of last 3 years. Fails outright when that average is ≤ 0 — no price can satisfy the ceiling</td>
               <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Price + 3y EPS</td>
             </tr>
             <tr>
               <td class="py-2.5 pr-4 font-mono text-xs text-zinc-500 dark:text-zinc-400 align-top">7</td>
               <td class="py-2.5 pr-4 font-medium text-zinc-900 dark:text-zinc-100 align-top whitespace-nowrap">Moderate P/B</td>
-              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">P/B ≤ 1.5, <em>or</em> P/E × P/B ≤ 22.5</td>
+              <td class="py-2.5 pr-4 text-zinc-600 dark:text-zinc-400 align-top">P/B ≤ 1.5, <em>or</em> P/E × P/B ≤ 22.5. Fails outright when book value/share is ≤ 0 (a negative P/B would otherwise pass)</td>
               <td class="py-2.5 text-zinc-500 dark:text-zinc-400 align-top">Price + book value/share</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="mt-3 print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
+        <p><span class="font-medium text-zinc-900 dark:text-zinc-100">Inclusive and unrounded.</span> Every threshold passes at equality — a current ratio of exactly 2, growth of exactly 33%, a P/E of exactly 15, a P/B of exactly 1.5, a product of exactly 22.5. Verdicts are computed on unrounded values and rounded only for display, so a P/E of 15.004 fails even though it shows as 15.00.</p>
+        <p><span class="font-medium text-zinc-900 dark:text-zinc-100">Units.</span> Revenue, current assets, current liabilities and the threshold are in $ millions; price, EPS and book value per share are in dollars.</p>
+        <p><span class="font-medium text-zinc-900 dark:text-zinc-100">Counting.</span> "X of 7 criteria met" counts an N/A rule as met — it is never failed — so a financial company can reach 7 of 7. The results screen says so beside the count and also shows the plain fail / pass / N/A breakdown.</p>
       </div>
       <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
@@ -201,15 +209,15 @@
             <i data-lucide="dollar-sign" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Graham Number</h3>
           </div>
-          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed"><code class="font-mono text-xs">Graham Number = √(22.5 × EPS × BVPS)</code></p>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Shown next to the current price with a margin: <code class="font-mono text-xs">(Graham Number − Price) / Graham Number</code>. Positive margin = trading below Graham's fair-value ceiling. Information only, never a signal.</p>
+          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed"><code class="font-mono text-xs">Graham Number = √(22.5 × EPS × BVPS)</code>, using the latest year's EPS.</p>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Shown next to the current price with a margin: <code class="font-mono text-xs">(Graham Number − Price) / Graham Number</code>. Positive margin = trading below Graham's fair-value ceiling. The margin is colored by sign — green below the ceiling, red above — beside a small bar showing how much of the price the ceiling covers, the formula with the actual numbers plugged in, and the caption “information only, never a signal.” Not computable unless the latest EPS and book value per share are both positive; the screen then says so and shows the two values it would have used.</p>
         </div>
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
           <div class="flex items-center gap-2">
             <i data-lucide="eye" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
             <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Limitations shown in the UI</h3>
           </div>
-          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Thresholds are from the 1970s — a strict P/E ≤ 15 rejects nearly every modern growth company. The app says "fails Graham's rules," never "bad stock." This note is visible on the results screen, alongside the financial-company N/A rule and the configurable revenue threshold.</p>
+          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Thresholds are from the 1970s — a strict P/E ≤ 15 rejects nearly every modern growth company. The app says "fails Graham's rules," never "bad stock." This note is visible on the results screen, alongside the financial-company N/A rule, the configurable revenue threshold (its current value, linked to Settings), and the line "Nothing here is investment advice."</p>
         </div>
       </div>
     </section>
@@ -248,7 +256,7 @@
           <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>Crawler files (sitemap, robots.txt, llms.txt)
         </li>
       </ul>
-      <p class="mt-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">None of this gets re-specified or rebuilt in the milestones below. The screener runs behind the starter's existing login as a single-account tool: the owner signs in with the one account, and every screener page lives inside the authenticated app. The starter's existing Settings page is the home for the screener's configurable values.</p>
+      <p class="mt-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">None of this gets re-specified or rebuilt in the milestones below. The screener runs behind the starter's existing login as a single-account tool: the owner signs in with the one account, and every screener page lives inside the authenticated app. The starter's existing Settings page is the home for the screener's configurable values. Signing in lands on the New analysis form — the starter's Dashboard stub was removed — and that form is the single item in the main navigation (Profile, Settings and Admin live in the account menu). The starter's signup page stays as shipped: single-account use is a convention, not something v1 enforces.</p>
     </section>
 
     <!-- OUT OF SCOPE -->
@@ -283,7 +291,7 @@
         </li>
         <li class="flex items-start gap-3">
           <i data-lucide="x" class="w-4 h-4 mt-1 shrink-0 text-zinc-400 dark:text-zinc-600"></i>
-          <span class="text-zinc-700 dark:text-zinc-300"><span class="font-medium">Multi-user accounts &amp; public signup</span><span class="text-zinc-500 dark:text-zinc-400"> — one person, one account behind the Build New starter's existing login; opening signup to others, teams, and sharing are all out.</span></span>
+          <span class="text-zinc-700 dark:text-zinc-300"><span class="font-medium">Multi-user accounts &amp; public signup</span><span class="text-zinc-500 dark:text-zinc-400"> — one person, one account behind the Build New starter's existing login. Teams, sharing and inviting others are out; the starter's signup page is left as shipped rather than locked down.</span></span>
         </li>
         <li class="flex items-start gap-3">
           <i data-lucide="x" class="w-4 h-4 mt-1 shrink-0 text-zinc-400 dark:text-zinc-600"></i>
@@ -301,7 +309,7 @@
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
           <div class="flex items-center gap-2">
             <i data-lucide="plug" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Alpha Vantage</h3>
+            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Alpha Vantage</h3><span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Planned · M2</span>
             <span class="ml-auto text-xs text-zinc-500 dark:text-zinc-400">Fundamentals data</span>
           </div>
           <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Supplies company financials (revenue, EPS history, dividend history, book value, price) when a ticker is entered. Free tier: ~25 requests/day with full-length annual histories — enough for one-ticker-at-a-time use. The provider must remain swappable; manual entry is the first-class fallback for anything it can't supply. Fundamentals fetched within the last 90 days are reused rather than re-fetched.</p>
@@ -318,12 +326,12 @@
       <h2 class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400 flex items-center gap-2">
         <i data-lucide="database" class="w-3.5 h-3.5"></i>Data model
       </h2>
-      <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-400">What the app needs to remember.</p>
+      <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-400">What the app needs to remember. Today only <span class="font-medium text-zinc-700 dark:text-zinc-300">Setting</span> exists: a run is computed and rendered, never stored, and the form says so ("Nothing is saved"). Stock and Analysis arrive with Milestones 2–3.</p>
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
           <div class="flex items-center gap-2">
             <i data-lucide="box" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Stock</h3>
+            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Stock</h3><span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Planned · M2–3</span>
           </div>
           <table class="mt-4 w-full text-sm">
             <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
@@ -350,7 +358,7 @@
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
           <div class="flex items-center gap-2">
             <i data-lucide="box" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Analysis <span class="ml-1 text-xs font-normal text-zinc-500 dark:text-zinc-400">(frozen snapshot — never edited after creation)</span></h3>
+            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Analysis <span class="ml-1 text-xs font-normal text-zinc-500 dark:text-zinc-400">(frozen snapshot — never edited after creation)</span></h3><span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400">Planned · M3</span>
           </div>
           <table class="mt-4 w-full text-sm">
             <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
@@ -385,13 +393,13 @@
         <div class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
           <div class="flex items-center gap-2">
             <i data-lucide="box" class="w-4 h-4 text-zinc-500 dark:text-zinc-400"></i>
-            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Setting</h3>
+            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Setting</h3><span class="inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">Shipped · M1</span>
           </div>
           <table class="mt-4 w-full text-sm">
             <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
               <tr>
-                <td class="py-2 pr-4 font-mono text-xs font-medium text-zinc-700 dark:text-zinc-300 align-top whitespace-nowrap">revenue threshold</td>
-                <td class="py-2 text-zinc-600 dark:text-zinc-400 leading-relaxed">The dollar bar for criterion 1, editable, default ≈ $700M — with room for other configurable values later</td>
+                <td class="py-2 pr-4 font-mono text-xs font-medium text-zinc-700 dark:text-zinc-300 align-top whitespace-nowrap">revenue threshold ($M)</td>
+                <td class="py-2 text-zinc-600 dark:text-zinc-400 leading-relaxed">The dollar bar for criterion 1, editable on the Settings page, default $700M, stored in $ millions on one app-wide row — with room for other configurable values later</td>
               </tr>
             </tbody>
           </table>
@@ -409,20 +417,23 @@
         <article class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden">
           <header class="flex items-center gap-3 p-5 border-b border-zinc-100 dark:border-zinc-800">
             <span class="shrink-0 w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 flex items-center justify-center text-sm font-semibold">1</span>
-            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Rules engine — manual entry only</h3>
+            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Rules engine — manual entry only</h3><span class="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">Shipped</span>
           </header>
           <div class="p-5">
-            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Proves the core: a form for all inputs feeds the rules engine and produces the full checklist screen. No API, no saving. Testable against worked examples from the book.</p>
+            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Proves the core: a form for all inputs feeds the rules engine and produces the full checklist screen. No API, no saving. Testable against worked examples from the book. Shipped; both screens were then rebuilt to the design handoff — Results (Phase 1) and the New analysis form (Phase 2) — and the list below describes them as they are now.</p>
             <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <h4 class="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5">
-                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>What gets built
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>What was built
                 </h4>
                 <ul class="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300 list-none p-0">
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>A manual input form for everything the 7 criteria and Graham Number need (ticker, company name, financial-company flag, price, and all financial inputs), with required fields clearly flagged until filled</span></li>
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The rules engine: all 7 defensive-investor checks, including criterion 2 marked N/A (not failed) for financial companies</span></li>
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The checklist results screen: each rule in plain language with the actual numbers used and its pass/fail/N-A verdict; the "X of 7 met" count; Graham Number vs. price with margin %; the limitations note visible on-screen</span></li>
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The revenue-threshold setting (default ≈ $700M), editable by extending the starter's existing Settings page</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>A manual input form for everything the 7 criteria and Graham Number need — ticker, company name (the one optional field), financial-company flag, share price, annual revenue, current assets &amp; liabilities, diluted EPS for the last 10 fiscal years newest-first, consecutive years of dividends paid, and book value per share — in four numbered sections: Company, Financials, Earnings per share, Dividends &amp; book value</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Required-ness is stated once ("Every field is required unless marked optional") and tracked live in a progress panel — "N of M required values entered", a done mark per section, "Ready to run" when complete. On mobile the count and the Run button sit in a fixed bottom bar</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Validation is server-side: errors come back as a summary that links to each field, on the field itself, and in the progress panel. Ticking "This is a financial company" disables the two balance-sheet fields and drops them from the count. The form states that nothing is saved</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The rules engine: all 7 defensive-investor checks, including criterion 2 marked N/A (not failed) for financial companies and criterion 5 marked N/A when the base-period average EPS is not positive. Thresholds are inclusive, verdicts use unrounded values, and every degenerate input (negative EPS, negative book value) has a defined outcome</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The checklist results screen: "X of 7 criteria met" with a seven-tick verdict strip and a "Fails rules 2, 6 and 7" line (N/A counted as met, and said so); Graham Number vs. price with the sign-colored margin, ceiling bar and worked formula; each rule as a plain-language outcome with its arithmetic alongside; a collapsible "Inputs used" recap exactly as typed; the limitations note; and "Edit inputs &amp; re-run", which reopens the form pre-filled</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The revenue-threshold setting (default $700M, in $ millions), editable on the starter's existing Settings page; the form's revenue field and the results' limitations note both show the current value and link to it</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>The form is the post-login home — the starter's Dashboard stub was removed — and "New analysis" is the single main-nav item</span></li>
                 </ul>
               </div>
               <div>
@@ -437,7 +448,7 @@
               </div>
             </div>
             <div class="mt-5 rounded-md border-l-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-sm text-emerald-900 dark:text-emerald-200">
-              <p class="flex items-start gap-2"><i data-lucide="flag" class="w-4 h-4 mt-0.5 shrink-0"></i><span><span class="font-semibold">Done when:</span> a worked example from <em>The Intelligent Investor</em> can be typed in by hand in the browser and produces the correct 7 verdicts, the correct X-of-7 count, and the correct Graham Number and margin.</span></p>
+              <p class="flex items-start gap-2"><i data-lucide="flag" class="w-4 h-4 mt-0.5 shrink-0"></i><span><span class="font-semibold">Done when:</span> a worked example from <em>The Intelligent Investor</em> can be typed in by hand in the browser and produces the correct 7 verdicts, the correct X-of-7 count, and the correct Graham Number and margin. <span class="font-semibold">Met:</span> worked examples A (7 of 7), B (financial company — N/A on rule 2, 7 of 7 met) and C (1 of 7) are covered by engine unit tests and end-to-end browser tests, along with every boundary and non-computable edge.</span></p>
             </div>
           </div>
         </article>
@@ -445,7 +456,7 @@
         <article class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden">
           <header class="flex items-center gap-3 p-5 border-b border-zinc-100 dark:border-zinc-800">
             <span class="shrink-0 w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 flex items-center justify-center text-sm font-semibold">2</span>
-            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">API fetch &amp; caching</h3>
+            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">API fetch &amp; caching</h3><span class="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">Not started</span>
           </header>
           <div class="p-5">
             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Ticker lookup pre-fills the form from Alpha Vantage. Manual entry stays first-class — the API assists, never gates.</p>
@@ -455,7 +466,7 @@
                   <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>What gets built
                 </h4>
                 <ul class="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300 list-none p-0">
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Entering a ticker fetches fundamentals from Alpha Vantage and pre-fills the form; fetched fields are tagged <code class="font-mono text-xs">api</code>, gaps are left blank and flagged</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Entering a ticker fetches fundamentals from Alpha Vantage and pre-fills the form; fetched fields are tagged <code class="font-mono text-xs">api</code>, gaps are left blank and flagged. The annual EPS series fills the ten newest-first EPS fields, and the dividend history collapses to the form's single "consecutive years of dividends paid" number</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Every field stays hand-editable; editing an api value flips its tag to <code class="font-mono text-xs">manual</code>, so provenance is always visible and truthful</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>If the API fails or the ticker isn't found, a plain message appears and the form works fully manually — never a dead end</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Fundamentals fetched within the last 90 days are reused rather than re-fetched — repeat lookups don't spend API calls</span></li>
@@ -481,7 +492,7 @@
         <article class="print-card rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden">
           <header class="flex items-center gap-3 p-5 border-b border-zinc-100 dark:border-zinc-800">
             <span class="shrink-0 w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 flex items-center justify-center text-sm font-semibold">3</span>
-            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Saved history</h3>
+            <h3 class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Saved history</h3><span class="ml-auto inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">Not started</span>
           </header>
           <div class="p-5">
             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Analyses become permanent records: browse them, reopen them intact, re-run any ticker fresh.</p>
@@ -491,10 +502,10 @@
                   <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>What gets built
                 </h4>
                 <ul class="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300 list-none p-0">
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Every completed analysis is saved automatically as a frozen snapshot — inputs, provenance tags, verdicts, numbers, Graham Number</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Every completed analysis is saved automatically as a frozen snapshot — inputs, provenance tags, verdicts, numbers, Graham Number; the form's "Nothing is saved" note goes away</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>A history page listing analyses newest-first: ticker, company, date, X of 7, margin</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Opening a past analysis shows its full checklist exactly as it was — past analyses are never editable</span></li>
-                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>A "Re-run" action starts a fresh analysis for that ticker with fresh data, creating a new record alongside the old</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>A "Re-run" action starts a fresh analysis for that ticker with fresh data, creating a new record alongside the old (unlike today's "Edit inputs &amp; re-run", which only reopens the form with the same numbers)</span></li>
                   <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i><span>Analyses can be deleted</span></li>
                 </ul>
               </div>
@@ -519,7 +530,7 @@
     </section>
 
     <footer class="pt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400">
-      Generated by <span class="font-medium">bm-prd-creator</span>. Open the milestone-1 <code class="font-mono">prompt.md</code> to start building.
+      Generated by <span class="font-medium">bm-prd-creator</span>; reconciled with the shipped app on 2026-09-08. Milestone 1 is done — open the milestone-2 <code class="font-mono">prompt.md</code> to continue building.
     </footer>
   </main>
 
