@@ -86,6 +86,14 @@ jobs:
       - name: Install JS dependencies
         run: npm ci
 
+      - name: Build the test assets once
+        # Rails runs the suite in parallel workers, and each one triggers
+        # vite_ruby's test-mode auto-build on its first request. Building once
+        # up front stops the workers racing on the manifest.
+        env:
+          RAILS_ENV: test
+        run: bin/vite build --clear
+
       - name: Run tests
         env:
           RAILS_ENV: test
@@ -140,6 +148,14 @@ jobs:
 
       - name: Install JS dependencies
         run: npm ci
+
+      - name: Build the test assets once
+        # Rails runs the suite in parallel workers, and each one triggers
+        # vite_ruby's test-mode auto-build on its first request. Building once
+        # up front stops the workers racing on the manifest.
+        env:
+          RAILS_ENV: test
+        run: bin/vite build --clear
 
       - name: Run system tests
         env:
