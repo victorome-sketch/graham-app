@@ -15,7 +15,7 @@ export function PageHeader({ title, description, actions, tabs }: PageHeaderProp
           <h1>{title}</h1>
           {description && <p className="mt-1">{description}</p>}
         </div>
-        {actions && <div className="flex items-center gap-2">{actions}</div>}
+        {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
       </div>
       {tabs}
     </div>

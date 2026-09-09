@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_04_23_000006) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_08_000001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "analyses", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "ticker", null: false
+    t.string "company_name"
+    t.boolean "financial_company", default: false, null: false
+    t.jsonb "inputs", default: {}, null: false
+    t.jsonb "result", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_analyses_on_user_id_and_created_at"
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -181,6 +193,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_23_000006) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "analyses", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade

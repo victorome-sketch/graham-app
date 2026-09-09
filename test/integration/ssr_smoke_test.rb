@@ -88,6 +88,27 @@ class SsrSmokeTest < ActiveSupport::TestCase
     assert_includes prefilled, "Ready to run"
     assert_includes prefilled, "of 15"
     assert_includes prefilled, "STL"
+
+    # A saved analysis adds the run date and the delete control to the header.
+    saved = render_page("analyses/Results", analysis: RESULTS_ANALYSIS, inputs: RESULTS_INPUTS,
+                        record: RESULTS_RECORD)["body"].gsub("<!-- -->", "")
+    assert_includes saved, "Run on"
+    assert_includes saved, "Sep 8, 2026, 3:42 PM"
+    assert_includes saved, "Edit inputs &amp; re-run"
+    assert_includes saved, "Delete"
+
+    # History: the empty state, then one saved row with its figures.
+    empty_history = render_page("analyses/Index", analyses: [])["body"].gsub("<!-- -->", "")
+    assert_includes empty_history, "No analyses yet"
+    assert_includes empty_history, "0 saved analyses."
+
+    history = render_page("analyses/Index", analyses: [ RESULTS_RECORD ])["body"].gsub("<!-- -->", "")
+    assert_includes history, "1 saved analysis."
+    assert_includes history, "STL"
+    assert_includes history, "Steady Corp"
+    assert_includes history, "of 7"
+    assert_includes history, "+20.0%"
+    assert_includes history, "Sep 8, 2026, 3:42 PM"
   end
 
   RESULTS_INPUTS = {
@@ -96,6 +117,12 @@ class SsrSmokeTest < ActiveSupport::TestCase
     eps_1: "2.00", eps_2: "2.10", eps_3: "1.90", eps_4: "1.80", eps_5: "1.70",
     eps_6: "1.60", eps_7: "1.50", eps_8: "1.30", eps_9: "1.25", eps_10: "1.20",
     dividend_years: "25", bvps: "20"
+  }.freeze
+
+  # The `record` prop of a saved result, and one row of the History list.
+  RESULTS_RECORD = {
+    id: 1, url: "/analyses/1", ticker: "STL", company_name: "Steady Corp",
+    met_count: 7, margin_pct: 20.0, ran_at: "2026-09-08T15:42:00Z", ran_at_label: "Sep 8, 2026, 3:42 PM"
   }.freeze
 
   # Shape of Graham::Checklist#to_props for worked example A (all seven pass).

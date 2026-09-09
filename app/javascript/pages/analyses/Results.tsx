@@ -2,11 +2,14 @@ import { useEffect, useRef } from "react"
 import { Head, Link } from "@inertiajs/react"
 import { Check, ChevronRight, Minus, X } from "lucide-react"
 import { AppShell } from "@/components/AppShell"
+import { DeleteAnalysisDialog } from "@/components/DeleteAnalysisDialog"
 import { PageHeader } from "@/components/PageHeader"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DataRow, DataTable } from "@/components/ui/data-table"
+import { fmtMillions, fmtMoney, fmtPct, fmtRatio } from "@/lib/format"
 import { cn } from "@/lib/utils"
+import type { AnalysisSummary } from "@/types/analysis"
 
 type Verdict = "pass" | "fail" | "na"
 
@@ -113,18 +116,8 @@ const EPS_LABELS = [
   ["eps_10", "9 years ago"],
 ] as const
 
-const moneyFmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" })
-const millionsFmt = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 })
-const pctFmt = new Intl.NumberFormat("en-US", {
-  minimumFractionDigits: 1,
-  maximumFractionDigits: 1,
-  signDisplay: "exceptZero",
-})
-
-const fmtMoney = (v: number) => moneyFmt.format(v)
-const fmtMillions = (v: number) => `$${millionsFmt.format(v)}M`
-const fmtRatio = (v: number) => v.toFixed(2)
-const fmtPct = (v: number) => `${pctFmt.format(v)}%`
+const CHECKED_AGAINST =
+  "Checked against Benjamin Graham's defensive-investor criteria (The Intelligent Investor, Ch. 14)."
 
 // One plain sentence per rule — what happened, without the figures. The
 // figures live in ruleMath() so they line up in their own column.
@@ -280,9 +273,13 @@ function VerdictRow({ rule, price }: { rule: Rule; price: number }) {
 export default function AnalysesResults({
   analysis,
   inputs,
+  record,
 }: {
   analysis: Analysis
   inputs: Record<string, string | boolean>
+  // The saved row this page renders. Every real render is a saved analysis;
+  // only the SSR smoke test renders the page from bare props.
+  record?: AnalysisSummary
 }) {
   const {
     ticker,
@@ -312,12 +309,19 @@ export default function AnalysesResults({
     }
   }, [])
 
-  const editLink = (
-    <Button variant="secondary" asChild>
-      <Link href="/analyses/new" data={inputs}>
-        Edit inputs &amp; re-run
-      </Link>
-    </Button>
+  // Re-running is a fresh submit prefilled from this snapshot: every run is
+  // saved, so it creates a new record alongside this one.
+  const actions = (
+    <>
+      <Button asChild>
+        <Link href="/analyses/new" data={inputs}>
+          Edit inputs &amp; re-run
+        </Link>
+      </Button>
+      {record && (
+        <DeleteAnalysisDialog url={record.url} ticker={ticker} ranAtLabel={record.ran_at_label} />
+      )}
+    </>
   )
 
   // Recap values are the user's raw strings — never parsed or reformatted.
@@ -359,8 +363,16 @@ export default function AnalysesResults({
               )}
             </>
           }
-          description="Checked against Benjamin Graham's defensive-investor criteria (The Intelligent Investor, Ch. 14)."
-          actions={editLink}
+          description={
+            record ? (
+              <>
+                Run on <time dateTime={record.ran_at}>{record.ran_at_label}</time>. {CHECKED_AGAINST}
+              </>
+            ) : (
+              CHECKED_AGAINST
+            )
+          }
+          actions={actions}
         />
 
         <section
@@ -526,7 +538,7 @@ export default function AnalysesResults({
               shows N/A instead.
             </li>
             <li>
-              The revenue minimum (currently {fmtMillions(analysis.revenue_threshold)}) is
+              The revenue minimum used for this run ({fmtMillions(analysis.revenue_threshold)}) is
               configurable in <Link href="/settings">Settings</Link>.
             </li>
             <li>Nothing here is investment advice.</li>

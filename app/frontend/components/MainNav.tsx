@@ -3,6 +3,7 @@ import { Link, router, usePage } from "@inertiajs/react"
 import {
   ChevronsLeft,
   ChevronsRight,
+  History,
   ListChecks,
   LogOut,
   Menu,
@@ -38,7 +39,14 @@ const DEFAULT_NAV_ITEMS: NavItemDef[] = [
     href: "/analyses/new",
     icon: ListChecks,
     label: "New analysis",
-    match: (url) => url === "/" || url.startsWith("/analyses"),
+    match: (url) => url === "/" || url.startsWith("/analyses/new"),
+  },
+  {
+    href: "/analyses",
+    icon: History,
+    label: "History",
+    // The list and every saved analysis (/analyses/:id), but not the form.
+    match: (url) => url.startsWith("/analyses") && !url.startsWith("/analyses/new"),
   },
 ]
 

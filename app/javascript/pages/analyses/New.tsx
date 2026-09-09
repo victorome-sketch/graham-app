@@ -137,6 +137,9 @@ export default function AnalysesNew({
 }) {
   const { props } = usePage<PageProps>()
   const errors = props.errors ?? {}
+  // Arriving via "Edit inputs & re-run": say so, since the prefilled form
+  // otherwise looks identical to a blank one.
+  const rerunTicker = str(prefill.ticker).trim().toUpperCase()
   const keyboardOpen = useKeyboardOpen()
 
   const form = useForm({
@@ -326,7 +329,11 @@ export default function AnalysesNew({
       <AppShell>
         <PageHeader
           title="New analysis"
-          description="Enter a stock's financials to check Graham's seven defensive-investor criteria."
+          description={
+            rerunTicker
+              ? `Re-running ${rerunTicker} — update any figures that changed, then run. This creates a new saved analysis.`
+              : "Enter a stock's financials to check Graham's seven defensive-investor criteria."
+          }
         />
 
         <form
@@ -523,11 +530,11 @@ export default function AnalysesNew({
                 {form.processing ? "Running checklist…" : "Run checklist"}
               </Button>
               <p className="mt-2 text-xs text-ink-muted">
-                Nothing is saved — the checklist is computed from exactly what you enter here.
+                Every checklist you run is saved to History — reopen or delete it there later.
               </p>
             </div>
             <p className="text-xs text-ink-muted lg:hidden">
-              Nothing is saved — the checklist is computed from exactly what you enter here.
+              Every checklist you run is saved to History — reopen or delete it there later.
             </p>
           </aside>
 
